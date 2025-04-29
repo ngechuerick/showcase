@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Global layout */
+.app {
+  position: relative;
+  background-color: #020617;
+  min-height: 100dvh;
+}
+.container {
+  max-width: 90rem;
+  margin-inline: auto;
+}
+
+/* Styling the navigation bar */
+.app__nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem 2.5rem;
+  border-bottom: 1px dashed #d1d5db75;
+  background-color: #020617;
+}
+
+.app__nav--items {
+  display: flex;
+  gap: 1.5rem;
+}
+.app__nav--items li {
+  list-style-type: none;
+}
+
+/* LINKS STYLING */
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #d1d5db;
+  border-radius: 8px;
+  padding: 0.1rem 0.2rem;
+
+  transition: all 0.2s ease;
+}
+
+a:hover,
+a:active {
+  background-color: #0d9488;
+}
+
+.active {
+  border-bottom: 1px solid #0d9488;
+}
+
+/* Styling the main content */
+.app__content {
+  padding-block: 1rem;
+}
+
+/* Styling the cards page */
+.cards__page {
+  padding-inline: 1.4rem;
+}
+.cards__container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.card {
+  width: 20rem;
+  box-shadow: rgba(255, 255, 255, 0.295) 0px 5px 15px 0px;
+  padding: 1.2rem;
+  border-radius: 0.4rem;
+}
+.card h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  color: #94a3b8;
+}
+.card p {
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* Styling the todo's page */
+.todo__page {
+  padding: 1.2rem;
+  max-width: 40rem;
+  margin-inline: auto;
+  border-radius: 2px;
+  border: 1px solid hsla(0, 0%, 89%, 0.733);
+}
+
+.form__tasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form__tasks input {
+  flex-grow: 0.5;
+}
+.form__tasks input,
+.editInput,
+.loginInput {
+  padding: 0.6rem 2rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.form__tasks input:focus {
+  border: none;
+  outline: none;
+}
+
+.todo__display--items {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  /* overflow-y: scroll; */
+}
+.todo__item {
+  border-radius: 4px;
+  padding: 1.2rem 2rem;
+  border: 1px solid #f8fafc75;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.btn {
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.btn-submit {
+  background-color: #2dd4bf;
+}
+.btn-edit {
+  margin-right: 1.2rem;
+}
+.btn-del {
+  background-color: #f87171;
+}
+.btn-cancel {
+  background-color: #6366f1;
+  color: #d1d5db;
+}
+
+/* Styling the login page */
+.login__page {
+  background-color: #020617;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1rem;
+}
+.login__page-cont {
+  max-width: 24rem;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background-color: #f8fafc;
+  box-shadow: rgba(255, 255, 255, 0.671) 0px 0px 16px;
+  border-radius: 2px;
+}
+.login__page-cont h1 {
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.form__login {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.form__login div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+sup {
+  color: red;
+}
+
+.loginInput {
+  box-shadow: inset 0 0 10px hsla(222, 46%, 11%, 0.349);
+  font-weight: 600;
+}
+
+.btn-login {
+  align-self: self-start;
+  background-color: #0d9488;
+  color: #d1d5db;
+}
+
+/* RESPONSIVENESS */
+
+@media only screen and (max-width: 600px) {
+  /* Styling the main content */
+  .app__content {
+    padding-inline: 0.4rem;
+  }
+
+  .form__tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.4rem;
+  }
+  .form__tasks input {
+    width: 100%;
+  }
+
+  .todo__display--items {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .todo__item {
+    border-radius: 4px;
+    padding: 1.2rem 1.2rem;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
